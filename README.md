@@ -10,7 +10,7 @@ The pipeline ingests around two million raw crime records across four police for
 
 - `crime_data_pipeline.py` is the Python pipeline that builds the reporting dataset from the raw sources.
 - `reporting_dataset_for_powerBI.csv` is the finished output, one row per force, month and crime type.
-- `crime_dashboard.pbix` is the Power BI dashboard built on that reporting dataset.
+- `crime_dashboard.pbix` is the Power BI dashboard built on that reporting dataset. If you do not have it installed, PNG files are included.
 - `data_dictionary_including_links_to_data_sources.pdf` defines every column, lists the data sources, records the assumptions.
 - `dashboard_information.pdf` is the written summary of the dashboard, its audience, its limitations.
 
@@ -18,9 +18,21 @@ The pipeline ingests around two million raw crime records across four police for
 
 One row is a unique combination of police force, month and crime type, giving 1,960 rows across four forces for the period July 2023 to May 2026. Each row carries the crime count, the resident population, a crime rate per 1,000 residents, a mean deprivation decile for the force. Forces should be compared on the rate rather than raw counts, because the four differ greatly in size. Full column definitions sit in the data dictionary.
 
-## Key findings
+## Conclusions
 
-Adjusted for population, West Midlands records the highest crime rate at 80.4 per 1,000 residents, with Essex the lowest at 60.9. Higher rates track the more deprived force areas, so deprivation is useful context for reading the figures. Recorded crime follows a repeating seasonal pattern, with the busier months returning each full year.
+The dashboard turns the raw crime record into a short set of decisions that force leadership can act on.
+
+- **Compare forces on rate, not raw counts.** Essex records more total crime than Staffordshire yet sits at a lower rate once population is accounted for, at 60.9 against 62.9 per 1,000. Judging performance or setting resource on raw volume would therefore penalise the larger force unfairly, so the per 1,000 rate should be the headline measure.
+
+- **Plan resourcing around the seasonal peak.** Recorded crime climbs to the same months each year, with the summer into autumn window busiest for West Midlands while February is quietest. Patrols, leave planning plus partner briefings can be weighted towards those predictable peaks, though each force should read its own calendar since the busy months do not match across forces.
+
+- **Focus demand reduction on the dominant categories.** Violence and sexual offences lead recorded crime in every force, followed by anti-social behaviour, with violence holding its share of the mix throughout the period. Effort aimed at those two categories reaches the largest part of total demand, while the stable mix means existing priorities can hold rather than chase an emerging threat.
+
+- **Read deprivation as context for demand, not as a cause.** Crime rates broadly track deprivation across the four forces, so a more deprived area such as West Midlands carries structurally higher demand. Resourcing plus fair comparison should account for that, rather than hold a more deprived force to the same rate as a less deprived one.
+
+- **Treat West Midlands as a standing area of high demand.** It records roughly double the monthly crime of its peers at the highest rate of 80.4 per 1,000, a level held steadily across the whole period rather than a temporary spike. Its resourcing should be set against that baseline rather than treated as a surge to ride out.
+
+In short, the dashboard reframes crime as a predictable, comparable demand curve, so leadership can plan ahead rather than react month to month.
 
 ## How to reproduce
 
